@@ -105,7 +105,7 @@
         <dependency>
             <groupId>org.twitter4j</groupId>
             <artifactId>twitter4j-core</artifactId>
-            <version>4.0.4</version>
+            <version>4.0.4-fixed-jcastro</version>
         </dependency>
         <dependency>
             <groupId>org.twitter4j</groupId>
@@ -128,7 +128,7 @@
         <dependency>
             <groupId>com.github.jcastro-inf</groupId>
             <artifactId>twitter4j-json</artifactId>
-            <version>master-SNAPSHOT</version>
+            <version>1.0.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
     <build>
