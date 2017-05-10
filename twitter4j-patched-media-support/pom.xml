@@ -1,13 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
-    <groupId>es.jcastro.twitter4j</groupId>
-    <artifactId>twitter4j-http2-support</artifactId>
-<version>4.0.4-fixed-jcastro</version>
+    <groupId>es.jcastro.twitter4j.patched</groupId>
+    <artifactId>twitter4j-patched-media-support</artifactId>
+	<version>4.0.4-fixed-jcastro</version>
     <packaging>jar</packaging>
-    <name>twitter4j-http2-support</name>
-    <description>A Java library for the Twitter API</description>
-    <url>http://twitter4j.org/</url>
+    <name>twitter4j-patched-media-support</name>
+    <description>twitter4j-patched optional component adds multimedia support</description>
     <licenses>
         <license>
             <name>Apache License 2.0</name>
@@ -44,25 +42,11 @@
             </build>
         </profile>
     </profiles>
-    <mailingLists>
-        <mailingList>
-            <name>Twitter4J</name>
-            <subscribe>twitter4j-subscribe@googlegroups.com</subscribe>
-            <unsubscribe>twitter4j-unsubscribe@googlegroups.com</unsubscribe>
-            <post>twitter4j@googlegroups.com</post>
-            <archive>http://groups.google.com/group/twitter4j</archive>
-        </mailingList>
-    </mailingLists>
     <dependencies>
         <dependency>
-            <groupId>es.jcastro.twitter4j</groupId>
-            <artifactId>twitter4j-core</artifactId>
+            <groupId>es.jcastro.twitter4j.patched</groupId>
+            <artifactId>twitter4j-patched-core</artifactId>
             <version>4.0.4-fixed-jcastro</version>
-        </dependency>
-        <dependency>
-            <groupId>com.squareup.okhttp</groupId>
-            <artifactId>okhttp</artifactId>
-            <version>2.4.0</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -70,27 +54,10 @@
             <version>3.8.2</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <!-- this is just to install alpn-boot jar to local .m2 repository. to be used by maven-surefire-plugin and included in the bootclasspath -->
-            <groupId>org.mortbay.jetty.alpn</groupId>
-            <artifactId>alpn-boot</artifactId>
-            <version>8.1.3.v20150130</version>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
     <build>
         <defaultGoal>install</defaultGoal>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.16</version>
-                <configuration combine.children="append">
-                    <argLine>
-                        -Xbootclasspath/p:${user.home}/.m2/repository/org/mortbay/jetty/alpn/alpn-boot/8.1.3.v20150130/alpn-boot-8.1.3.v20150130.jar
-                    </argLine>
-                </configuration>
-            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
@@ -145,9 +112,6 @@
                         <goals>
                             <goal>jar</goal>
                         </goals>
-                        <configuration>
-                            <failOnError>false</failOnError>
-                        </configuration>
                     </execution>
                 </executions>
                 <configuration>

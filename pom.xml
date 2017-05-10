@@ -1,12 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>es.jcastro.twitter4j</groupId>
-    <artifactId>twitter4j</artifactId>
+    <groupId>es.jcastro.twitter4j.patched</groupId>
+    <artifactId>twitter4j-patched</artifactId>
     <version>4.0.4-fixed-jcastro</version>
     <packaging>pom</packaging>
-    <name>twitter4j</name>
+    <name>twitter4j-patched</name>
     <description>A Java library for the Twitter API</description>
-    <url>http://twitter4j.org/</url>
     <licenses>
         <license>
             <name>Apache License 2.0</name>
@@ -44,12 +43,12 @@
         </profile>
     </profiles>
     <modules>
-        <module>twitter4j-async</module>
-        <module>twitter4j-core</module>
-        <module>twitter4j-examples</module>
-        <module>twitter4j-appengine</module>
-        <module>twitter4j-http2-support</module>
-        <module>twitter4j-stream</module>
-        <module>twitter4j-media-support</module>
+        <module>twitter4j-patched-async</module>
+        <module>twitter4j-patched-core</module>
+        <module>twitter4j-patched-examples</module>
+        <module>twitter4j-patched-appengine</module>
+        <module>twitter4j-patched-http2-support</module>
+        <module>twitter4j-patched-stream</module>
+        <module>twitter4j-patched-media-support</module>
     </modules>
 </project>

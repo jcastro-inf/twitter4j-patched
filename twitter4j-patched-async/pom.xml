@@ -1,13 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
-    <groupId>es.jcastro.twitter4j</groupId>
-    <artifactId>twitter4j-examples</artifactId>
-    <version>4.0.4-fixed-jcastro</version>
+    <groupId>es.jcastro.twitter4j.patched</groupId>
+    <artifactId>twitter4j-patched-async</artifactId>
+	<version>4.0.4-fixed-jcastro</version>
     <packaging>jar</packaging>
-    <name>twitter4j-examples</name>
+    <name>twitter4j-patched-async</name>
     <description>A Java library for the Twitter API</description>
-    <url>http://twitter4j.org/</url>
     <licenses>
         <license>
             <name>Apache License 2.0</name>
@@ -46,23 +44,8 @@
     </profiles>
     <dependencies>
         <dependency>
-            <groupId>es.jcastro.twitter4j</groupId>
-            <artifactId>twitter4j-core</artifactId>
-            <version>4.0.4-fixed-jcastro</version>
-        </dependency>
-        <dependency>
-            <groupId>es.jcastro.twitter4j</groupId>
-            <artifactId>twitter4j-async</artifactId>
-            <version>4.0.4-fixed-jcastro</version>
-        </dependency>
-        <dependency>
-            <groupId>es.jcastro.twitter4j</groupId>
-            <artifactId>twitter4j-stream</artifactId>
-            <version>4.0.4-fixed-jcastro</version>
-        </dependency>
-        <dependency>
-            <groupId>es.jcastro.twitter4j</groupId>
-            <artifactId>twitter4j-media-support</artifactId>
+            <groupId>es.jcastro.twitter4j.patched</groupId>
+            <artifactId>twitter4j-patched-core</artifactId>
             <version>4.0.4-fixed-jcastro</version>
         </dependency>
         <dependency>
@@ -85,8 +68,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
                     <encoding>UTF-8</encoding>
-                    <source>8</source>
-                    <target>8</target>
+                    <source>6</source>
+                    <target>6</target>
                 </configuration>
                 <version>2.5.1</version>
             </plugin>

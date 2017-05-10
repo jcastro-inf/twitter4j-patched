@@ -1,13 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
-    <groupId>es.jcastro.twitter4j</groupId>
-    <artifactId>twitter4j-appengine</artifactId>
-<version>4.0.4-fixed-jcastro</version>
+    <groupId>es.jcastro.twitter4j.patched</groupId>
+    <artifactId>twitter4j-patched-examples</artifactId>
+    <version>4.0.4-fixed-jcastro</version>
     <packaging>jar</packaging>
-    <name>twitter4j-appengine</name>
     <description>A Java library for the Twitter API</description>
-    <url>http://twitter4j.org/</url>
     <licenses>
         <license>
             <name>Apache License 2.0</name>
@@ -44,38 +41,26 @@
             </build>
         </profile>
     </profiles>
-    <mailingLists>
-        <mailingList>
-            <name>Twitter4J</name>
-            <subscribe>twitter4j-subscribe@googlegroups.com</subscribe>
-            <unsubscribe>twitter4j-unsubscribe@googlegroups.com</unsubscribe>
-            <post>twitter4j@googlegroups.com</post>
-            <archive>http://groups.google.com/group/twitter4j</archive>
-        </mailingList>
-    </mailingLists>
     <dependencies>
         <dependency>
-            <groupId>es.jcastro.twitter4j</groupId>
-            <artifactId>twitter4j-core</artifactId>
+            <groupId>es.jcastro.twitter4j.patched</groupId>
+            <artifactId>twitter4j-patched-core</artifactId>
             <version>4.0.4-fixed-jcastro</version>
         </dependency>
         <dependency>
-            <groupId>com.google.appengine</groupId>
-            <artifactId>appengine-api-1.0-sdk</artifactId>
-            <version>1.8.7</version>
-            <scope>compile</scope>
+            <groupId>es.jcastro.twitter4j.patched</groupId>
+            <artifactId>twitter4j-patched-async</artifactId>
+            <version>4.0.4-fixed-jcastro</version>
         </dependency>
         <dependency>
-            <groupId>com.google.appengine</groupId>
-            <artifactId>appengine-testing</artifactId>
-            <version>1.8.7</version>
-            <scope>test</scope>
+            <groupId>es.jcastro.twitter4j.patched</groupId>
+            <artifactId>twitter4j-patched-stream</artifactId>
+            <version>4.0.4-fixed-jcastro</version>
         </dependency>
         <dependency>
-            <groupId>com.google.appengine</groupId>
-            <artifactId>appengine-api-stubs</artifactId>
-            <version>1.8.7</version>
-            <scope>test</scope>
+            <groupId>es.jcastro.twitter4j.patched</groupId>
+            <artifactId>twitter4j-patched-media-support</artifactId>
+            <version>4.0.4-fixed-jcastro</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -97,8 +82,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
                     <encoding>UTF-8</encoding>
-                    <source>6</source>
-                    <target>6</target>
+                    <source>8</source>
+                    <target>8</target>
                 </configuration>
                 <version>2.5.1</version>
             </plugin>
@@ -142,6 +127,8 @@
                             <goal>jar</goal>
                         </goals>
                         <configuration>
+                            <excludePackageNames>
+                            </excludePackageNames>
                             <failOnError>false</failOnError>
                         </configuration>
                     </execution>

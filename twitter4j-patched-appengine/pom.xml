@@ -1,13 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
-    <groupId>es.jcastro.twitter4j</groupId>
-    <artifactId>twitter4j-core</artifactId>
-    <version>4.0.4-fixed-jcastro</version>
+	<groupId>es.jcastro.twitter4j.patched</groupId>
+    <artifactId>twitter4j-patched-appengine</artifactId>
+	<version>4.0.4-fixed-jcastro</version>
     <packaging>jar</packaging>
-    <name>twitter4j-core</name>
+    <name>twitter4j-patched-appengine</name>
     <description>A Java library for the Twitter API</description>
-    <url>http://twitter4j.org/</url>
     <licenses>
         <license>
             <name>Apache License 2.0</name>
@@ -44,59 +42,35 @@
             </build>
         </profile>
     </profiles>
-    <mailingLists>
-        <mailingList>
-            <name>Twitter4J</name>
-            <subscribe>twitter4j-subscribe@googlegroups.com</subscribe>
-            <unsubscribe>twitter4j-unsubscribe@googlegroups.com</unsubscribe>
-            <post>twitter4j@googlegroups.com</post>
-            <archive>http://groups.google.com/group/twitter4j</archive>
-        </mailingList>
-    </mailingLists>
-    <repositories>
-        <repository>
-            <id>jitpack.io</id>
-            <url>https://jitpack.io</url>
-        </repository>
-    </repositories>
     <dependencies>
+        <dependency>
+            <groupId>es.jcastro.twitter4j.patched</groupId>
+            <artifactId>twitter4j-patched-core</artifactId>
+            <version>4.0.4-fixed-jcastro</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.appengine</groupId>
+            <artifactId>appengine-api-1.0-sdk</artifactId>
+            <version>1.8.7</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.appengine</groupId>
+            <artifactId>appengine-testing</artifactId>
+            <version>1.8.7</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.appengine</groupId>
+            <artifactId>appengine-api-stubs</artifactId>
+            <version>1.8.7</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.10</version>
+            <version>3.8.2</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.googlecode</groupId>
-            <artifactId>kryo</artifactId>
-            <version>1.04</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.2</version>
-            <scope>provided</scope>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>commons-logging</groupId>
-            <artifactId>commons-logging-api</artifactId>
-            <version>1.1</version>
-            <scope>provided</scope>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.17</version>
-            <scope>provided</scope>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>com.github.jcastro-inf</groupId>
-            <artifactId>twitter4j-json</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
     <build>
@@ -106,30 +80,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
                 <version>2.3.2</version>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>build-helper-maven-plugin</artifactId>
-                <version>1.8</version>
-                <executions>
-                    <execution>
-                        <id>add-source</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>add-source</goal>
-                        </goals>
-                        <configuration>
-                            <sources>
-                                <source>src/internal-async/java</source>
-                                <source>src/internal-http/java</source>
-                                <source>src/jmx/java</source>
-                                <source>src/internal-json/java</source>
-                                <source>src/internal-logging/java</source>
-                                <source>src/internal-util/java</source>
-                            </sources>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
