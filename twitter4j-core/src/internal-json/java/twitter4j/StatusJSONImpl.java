@@ -75,8 +75,11 @@ import static twitter4j.ParseUtil.getDate;
             TwitterObjectFactory.clearThreadLocalMap();
             TwitterObjectFactory.registerJSONObject(this, json);
 
-            String jsonString = TwitterObjectFactory.getRawJSON(this);
-            Twitter4jJSonStorer.getInstance().addObjectJSon(this,jsonString);
+            String retrievedJSon = TwitterObjectFactory.getRawJSON(this);
+            String originalJSon = json.toString();
+            String responseJSon = res.toString();
+
+            Twitter4jJSonStorer.getInstance().addObjectJSon(this,retrievedJSon);
         }
     }
 
@@ -86,8 +89,10 @@ import static twitter4j.ParseUtil.getDate;
         if (conf.isJSONStoreEnabled()) {
             TwitterObjectFactory.registerJSONObject(this, json);
 
-            String jsonString = TwitterObjectFactory.getRawJSON(this);
-            Twitter4jJSonStorer.getInstance().addObjectJSon(this,jsonString);
+            String retrievedJSon = TwitterObjectFactory.getRawJSON(this);
+            String originalJSon = json.toString();
+
+            Twitter4jJSonStorer.getInstance().addObjectJSon(this,retrievedJSon);
         }
     }
 
