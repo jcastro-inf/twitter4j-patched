@@ -16,7 +16,6 @@
 
 package twitter4j;
 
-import es.jcastro.twitter4j.json.Twitter4jJSonStorer;
 import twitter4j.conf.Configuration;
 
 import java.util.Arrays;
@@ -67,6 +66,12 @@ import static twitter4j.ParseUtil.getDate;
     private Status quotedStatus;
     private long quotedStatusId = -1L;
 
+    private String json = "";
+
+    public String getJson(){
+        return json;
+    }
+
     /*package*/StatusJSONImpl(HttpResponse res, Configuration conf) throws TwitterException {
         super(res);
         JSONObject json = res.asJSONObject();
@@ -79,7 +84,7 @@ import static twitter4j.ParseUtil.getDate;
             String originalJSon = json.toString();
             String responseJSon = res.toString();
 
-            Twitter4jJSonStorer.getInstance().addObjectJSon(this,retrievedJSon);
+            this.json = retrievedJSon;
         }
     }
 
@@ -92,7 +97,7 @@ import static twitter4j.ParseUtil.getDate;
             String retrievedJSon = TwitterObjectFactory.getRawJSON(this);
             String originalJSon = json.toString();
 
-            Twitter4jJSonStorer.getInstance().addObjectJSon(this,retrievedJSon);
+            this.json = retrievedJSon;
         }
     }
 
@@ -103,7 +108,7 @@ import static twitter4j.ParseUtil.getDate;
         TwitterObjectFactory.registerJSONObject(this, json);
         
         String jsonString = TwitterObjectFactory.getRawJSON(this);
-        Twitter4jJSonStorer.getInstance().addObjectJSon(this,jsonString);
+        this.json = jsonString;
     }
 
     /* Only for serialization purposes. */

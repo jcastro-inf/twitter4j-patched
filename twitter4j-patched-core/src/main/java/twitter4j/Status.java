@@ -229,4 +229,10 @@ public interface Status extends Comparable<Status>, TwitterResponse,
      * @since Twitter4J 4.0.4
      */
     Status getQuotedStatus();
+
+    /**
+     * Returns the original json of the tweet
+     * @since Twitter4J 4.0.4-fixed-jcastro
+     */
+    public String getJson();
 }
