@@ -372,4 +372,9 @@ final class LazyStatus implements twitter4j.Status {
                 "target=" + getTarget() +
                 "}";
     }
+
+    public String getJson(){
+        return "";
+    }
 }
+
